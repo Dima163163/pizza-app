@@ -4,7 +4,7 @@ import {ProductCardProps} from './ProductCard.props';
 
 const ProductCard = (props: ProductCardProps) => {
 	return (
-		<Link className={styles['link']} to={'/'}>
+		<Link className={styles['link']} to={`/product/${props.id}`}>
 			<div className={styles['card']}>
 				<div
 					className={styles['head']}
