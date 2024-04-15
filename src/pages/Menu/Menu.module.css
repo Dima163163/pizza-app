@@ -1,11 +1,5 @@
 .head {
 	display: flex;
 	justify-content: space-between;
-}
-
-.products-list {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: 45px 34px;
+	margin-bottom: 30px;
 }

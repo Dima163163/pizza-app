@@ -1,10 +1,11 @@
-import {useParams} from 'react-router-dom';
+import {useLoaderData} from 'react-router-dom';
+import {Product} from '../../interfaces/product.interface';
 
-export function Product() {
-	const {id} = useParams();
+export function ProductSingle() {
+	const data = useLoaderData() as Product;
 	return (
 		<>
-			<div>Product- {id}</div>
+			<div>Product- {data.name}</div>
 		</>
 	);
 }
