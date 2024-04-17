@@ -9,7 +9,7 @@ export const MenuList = ({products}: MenuListProps) => {
 				<ProductCard
 					key={product.id}
 					id={product.id}
-					title={product.name}
+					name={product.name}
 					description={
 						product.ingredients.join(', ')[0].toUpperCase() +
 						product.ingredients.join(', ').slice(1).toLowerCase()
