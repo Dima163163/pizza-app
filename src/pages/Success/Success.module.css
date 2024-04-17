@@ -1,0 +1,15 @@
+.success {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.text {
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 120%;
+	text-align: center;
+	color: var(--text-color);
+}
