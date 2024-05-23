@@ -1,13 +1,13 @@
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Headling from '../../components/Headling/Headling';
 import Input from '../../components/Input/Input';
 import styles from './Login.module.css';
-import {FormEvent, useEffect} from 'react';
-import {login, userActions} from '../../store/user.slice';
-import {useDispatch, useSelector} from 'react-redux';
-import {AppDispatch} from '../../store/store';
-import {RootState} from '../../store/store';
+import { FormEvent, useEffect } from 'react';
+import { login, userActions } from '../../store/user.slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../../store/store';
+import { RootState } from '../../store/store';
 
 export type LoginForm = {
 	email: {
@@ -21,7 +21,7 @@ export type LoginForm = {
 const Login = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
-	const {jwt, loginErrorMessage} = useSelector(
+	const { jwt, loginErrorMessage } = useSelector(
 		(state: RootState) => state.user
 	);
 
@@ -35,12 +35,12 @@ const Login = () => {
 		e.preventDefault();
 		dispatch(userActions.cleanLoginError());
 		const target = e.target as typeof e.target & LoginForm;
-		const {email, password} = target;
+		const { email, password } = target;
 		await sendLogin(email.value, password.value);
 	};
 
 	const sendLogin = async (email: string, password: string) => {
-		dispatch(login({email, password}));
+		dispatch(login({ email, password }));
 	};
 
 	return (
@@ -67,7 +67,7 @@ const Login = () => {
 			</form>
 			<div className={styles['links']}>
 				<div>Нет аккаунта?</div>
-				<Link to="/auth/register">Зарегестрироваться</Link>
+				<Link to="/auth/register">Зарегистрироваться</Link>
 			</div>
 		</div>
 	);
